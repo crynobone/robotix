@@ -1,0 +1,10 @@
+{
+	"name": "Robots.txt",
+	"description": "Customize robots.txt for your application",
+	"author": "Mior Muhammad Zaki",
+	"url": "https://github.com/crynobone/robotix",
+	"version": "2.0.*",
+	"provide": [
+		"Robotix\\RobotixServiceProvider"
+	]
+}
