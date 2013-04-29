@@ -1,6 +1,7 @@
 {
     "name": "crynobone/robotix",
     "description": "Robots.txt Extension for Orchestra Platform",
+    "keywords": ["orchestra-platform", "laravel", "extension"],
     "authors": [
         {
             "name": "Mior Muhammad Zaki",
