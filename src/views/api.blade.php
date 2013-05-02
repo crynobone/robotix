@@ -6,7 +6,7 @@
 
 	<div class="control-group {{ $errors->has('robots') ? 'error' : '' }}">
 		<div class="controls">
-			{{ Form::textarea('robots', $robots, array('class' => 'col col-lg-12', 'rows' => 10)) }}
+			{{ Form::textarea('robots', $robots, array('rows' => 10)) }}
 			{{ $errors->first('robots', '<p class="help-block">:message</p>') }}
 		</div>
 	</div>
