@@ -4,10 +4,10 @@
 
 {{ Form::open(array('url' => handles('orchestra/foundation::resources/robotix'), 'method' => 'POST')) }}
 
-	<div class="control-group {{ $errors->has('robots') ? 'error' : '' }}">
+	<div class="control-group {{ $errors->has('robots') ? 'has-error' : '' }}">
 		<div class="controls">
 			{{ Form::textarea('robots', $robots, array('rows' => 10)) }}
-			{{ $errors->first('robots', '<p class="help-block">:message</p>') }}
+			{{ $errors->first('robots', '<p class="help-block error">:message</p>') }}
 		</div>
 	</div>
 	<div class="form-actions">
