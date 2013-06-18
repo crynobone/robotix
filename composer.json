@@ -1,6 +1,7 @@
 {
     "name": "crynobone/robotix",
     "description": "Robots.txt Extension for Orchestra Platform 2",
+    "license": "MIT",
     "keywords": ["orchestra-platform", "orchestral", "extension", "laravel"],
     "authors": [
         {
