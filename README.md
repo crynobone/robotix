@@ -1,7 +1,7 @@
-Robots.txt for Orchestra Platform
+Robots.txt Extension
 ==============
 
-A simple extension for managing robots.txt for your Orchestra Platform.
+A simple extension for managing robots.txt for your Orchestra Platform 2.
 
 ## Installation
 
@@ -10,15 +10,17 @@ To install through composer, simply put the following in your `composer.json` fi
 ```json
 {
   "require": {
-		"crynobone/robotix": "dev-master"
+		"crynobone/robotix": "2.0.*"
 	},
 	"minimum-stability": "dev"
 }
 ```
 
-## Setup
+### Setup
 
-To start using Robotix, activate the extension from Orchestra Administrator Interface.
+To start using Robotix, activate the extension from Orchestra Platform Administrator Interface.
+
+> You might need to delete `public/robots.txt` to allow Laravel to handle the route.
 
 ## Contributors
 

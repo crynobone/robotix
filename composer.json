@@ -1,15 +1,18 @@
 {
     "name": "crynobone/robotix",
-    "description": "Robots.txt Extension for Orchestra Platform",
-    "keywords": ["orchestra-platform", "laravel", "extension"],
+    "description": "Robots.txt Extension for Orchestra Platform 2",
+    "keywords": ["orchestra-platform", "orchestral", "extension", "laravel"],
     "authors": [
         {
             "name": "Mior Muhammad Zaki",
-            "email": "crynobone@gmail.com"
+            "email": "crynobone@gmail.com",
+            "homepage": "https://github.com/crynobone"
         }
     ],
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
         "orchestra/support": "2.0.*"
     },
     "autoload": {
