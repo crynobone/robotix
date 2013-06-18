@@ -1,13 +1,13 @@
 <?php namespace Robotix;
 
-use Controller;
-use Input;
-use Redirect;
-use Validator;
-use View;
-use Orchestra\App;
-use Orchestra\Messages;
-use Orchestra\Site;
+use Illuminate\Routing\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\View;
+use Orchestra\Support\Facades\App;
+use Orchestra\Support\Facades\Messages;
+use Orchestra\Support\Facades\Site;
 
 class ApiController extends Controller {
 	
