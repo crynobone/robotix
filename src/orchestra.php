@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Event;
+use Orchestra\Support\Facades\App;
+use Orchestra\Support\Facades\Resources;
+
 /*
 |--------------------------------------------------------------------------
 | Register Robotix as Orchestra Resources
@@ -11,12 +15,12 @@
 
 Event::listen('orchestra.started: admin', function ()
 {
-	$robots = Orchestra\Resources::make('robotix', array(
+	$robots = Resources::make('robotix', array(
 		'name'    => 'Robots.txt',
 		'uses'    => 'Robotix\ApiController',
 		'visible' => function ()
 		{
-			return (Orchestra\App::acl()->can('manage orchestra'));
+			return (App::acl()->can('manage orchestra'));
 		},
 	));
 });
