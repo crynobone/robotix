@@ -19,7 +19,13 @@ class ApiController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->beforeFilter('orchestra.manage');
+		$this->beforeFilter(function ()
+		{
+			if ( ! App::acl()->can('manage orchestra'))
+			{
+				return Redirect::to(resources('/'));
+			}
+		});
 	}
 
 	public function getIndex()
