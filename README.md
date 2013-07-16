@@ -11,8 +11,7 @@ To install through composer, simply put the following in your `composer.json` fi
 {
   "require": {
 		"crynobone/robotix": "2.0.*"
-	},
-	"minimum-stability": "dev"
+	}
 }
 ```
 
