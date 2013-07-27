@@ -22,7 +22,7 @@ class RobotixServiceProvider extends ServiceProvider {
 	{
 		$this->package('crynobone/robotix', 'robotix', __DIR__.'/../');
 		
-		require_once __DIR__.'/../start.php';
+		require_once __DIR__.'/../start/global.php';
 		require_once __DIR__.'/../routes.php';
 	}
 
