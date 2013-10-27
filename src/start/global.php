@@ -13,14 +13,10 @@ use Orchestra\Support\Facades\Resources;
 |
 */
 
-Event::listen('orchestra.started: admin', function ()
-{
-	$robots = Resources::make('robotix', array(
-		'name'    => 'Robots.txt',
-		'uses'    => 'Robotix\ApiController',
-		'visible' => function ()
-		{
-			return (App::acl()->can('manage orchestra'));
-		},
-	));
+Event::listen('orchestra.started: admin', function () {
+    $robots = Resources::make('robotix', array(
+        'name'    => 'Robots.txt',
+        'uses'    => 'Robotix\ApiController',
+        'visible' => App::acl()->can('manage orchestra'),
+    ));
 });

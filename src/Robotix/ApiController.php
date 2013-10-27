@@ -9,59 +9,56 @@ use Orchestra\Support\Facades\App;
 use Orchestra\Support\Facades\Messages;
 use Orchestra\Support\Facades\Site;
 
-class ApiController extends Controller {
-	
-	/**
-	 * Apply filters during construct.
-	 *
-	 * @access public
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->beforeFilter(function ()
-		{
-			if ( ! App::acl()->can('manage orchestra'))
-			{
-				return Redirect::to(resources('/'));
-			}
-		});
-	}
+class ApiController extends Controller
+{
+    /**
+     * Apply filters during construct.
+     *
+     * @access public
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->beforeFilter(function () {
+            if (! App::acl()->can('manage orchestra')) {
+                return Redirect::to(resources('/'));
+            }
+        });
+    }
 
-	public function getIndex()
-	{
-		$memory = App::memory();
-		$robots = $memory->get('site.robots-txt', '');
+    public function getIndex()
+    {
+        $memory = App::memory();
+        $robots = $memory->get('site.robots-txt', '');
 
-		Site::set('title', 'Robots.txt');
+        Site::set('title', 'Robots.txt');
 
-		return View::make('robotix::api', compact('robots'));
-	}
+        return View::make('robotix::api', compact('robots'));
+    }
 
-	/**
-	 * Update robots.txt
-	 *
-	 * @access public
-	 * @return Response
-	 */
-	public function postIndex()
-	{
-		$input      = Input::all();
-		$rules      = array('robots' => 'required');
-		$validation = Validator::make($input, $rules);
+    /**
+     * Update robots.txt
+     *
+     * @access public
+     * @return Response
+     */
+    public function postIndex()
+    {
+        $input      = Input::all();
+        $rules      = array('robots' => 'required');
+        $validation = Validator::make($input, $rules);
 
-		if ($validation->fails())
-		{
-			return Redirect::to(handles('orchestra/foundation::resources/robotix'))
-				->withInput()
-				->withErrors($validation);
-		}
+        if ($validation->fails()) {
+            return Redirect::to(handles('orchestra/foundation::resources/robotix'))
+                ->withInput()
+                ->withErrors($validation);
+        }
 
-		$memory = App::memory();
-		$memory->put('site.robots-txt', $input['robots']);
+        $memory = App::memory();
+        $memory->put('site.robots-txt', $input['robots']);
 
-		Messages::add('success', 'Robots.txt has been updated');
+        Messages::add('success', 'Robots.txt has been updated');
 
-		return Redirect::to(handles('orchestra/foundation::resources/robotix'));
-	}
+        return Redirect::to(handles('orchestra/foundation::resources/robotix'));
+    }
 }
